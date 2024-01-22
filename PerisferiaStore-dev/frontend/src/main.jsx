@@ -9,7 +9,7 @@ import { CartProvider } from "./context/Cart.jsx";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { initMercadoPago } from '@mercadopago/sdk-react';
 
-// Agrega tu clave pública de Mercado Pago
+
 initMercadoPago('TEST-1c120130-f27d-4676-930c-ae6d7014d092');
 
 ReactDOM.createRoot(document.getElementById("root")).render(
