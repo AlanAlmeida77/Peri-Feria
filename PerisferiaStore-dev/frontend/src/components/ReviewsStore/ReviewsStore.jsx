@@ -17,7 +17,7 @@ const reviewsStore = () => {
           const response = await axios.get(`http://localhost:3001/admin/user/${user.email}`);
           setUserId(response.data.id)
         } catch (error) {
-          console.error('Error al obtener el usuario:', error);
+          console.error('Error al intentar obtener usuario:', error);
         }
       }
     };
@@ -33,7 +33,7 @@ const reviewsStore = () => {
     if (!user) {
       Swal.fire({
         title: 'Inicia sesión',
-        text: 'Inicia sesión para agregar una reseña 😉',
+        text: 'Inicia sesión para agregar una reseña',
         icon: 'warning',
         confirmButtonText: 'Ok',
       });
@@ -44,7 +44,7 @@ const reviewsStore = () => {
     };
 
     try {
-      await axios.post(`https://perisferiastore-production.up.railway.app/store/${userId}`, sendReview);
+      await axios.post(`http://localhost:3001/store/${userId}`, sendReview);
       Swal.fire({
         title: 'Gracias!',
         text: 'Se ha registrado tu comentario',
