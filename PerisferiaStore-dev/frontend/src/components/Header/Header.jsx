@@ -25,7 +25,7 @@ const Header = () => {
     const fetchId = async () => {
       if (user && user.email) {
         try {
-          const response = await axios.get(`https://perisferiastore-production.up.railway.app/admin/user/${user.email}`);
+          const response = await axios.get(`http://localhost:3001/admin/user/${user.email}`);
           setUserData(response.data)
         } catch (error) {
           console.error('Error al obtener el usuario:', error);

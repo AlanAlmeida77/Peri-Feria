@@ -14,7 +14,7 @@ const ReviewForm = ({ id }) => {
       if (user && user.email) {
         try {
           const response = await axios.get(
-            `https://perisferiastore-production.up.railway.app/admin/user/${user.email}`
+            `http://localhost:3001/admin/user/${user.email}`
           );
           setUserId(response.data.id);
         } catch (error) {
